@@ -2,9 +2,9 @@ import random
 import time
 
 def txt(t, d=0.05):
-    """Simulates typing effect"""
+    """typing effect"""
     for c in t:
-        print(c, end="", flush=True)
+        print(c, end="")
         time.sleep(d)
     print()
 
@@ -22,7 +22,7 @@ def intro():
     time.sleep(2)
 
 def ld_wrd(lvl):
-    """Load words based on difficulty level"""
+    """words difficulty level"""
     wb = {
         1: ["TREE", "CODE", "JAVA", "BUG", "LOOP", "DATA"],
         2: ["PYTHON", "LAPTOP", "BINARY", "SCRIPT", "VARIABLE", "DEBUG"],
@@ -31,7 +31,7 @@ def ld_wrd(lvl):
     return wb[lvl][:]
 
 def mix_wrd(w):
-    """Scramble the word"""
+    """shufflin word"""
     w = list(w)
     random.shuffle(w)
     scrambled = ''
@@ -40,7 +40,7 @@ def mix_wrd(w):
     return scrambled
 
 def sel_lvl():
-    """Select difficulty level"""
+    """difficulty level"""
     print("\nChoose Difficulty Level:")
     print("  1. Easy    (Words up to 5 letters)")
     print("  2. Medium  (Words 6-8 letters)")
@@ -52,7 +52,7 @@ def sel_lvl():
             if lvl in [1, 2, 3]:
                 return lvl
             else:
-                print("  ⚠️ Kya kar raha hai bhai? Sahi se 1, 2 ya 3 daal! 😤")
+                print("  ⚠️ Kya kar raha hai bete? Sahi se 1, 2 ya 3 daal! 😤")
         except ValueError:
             print("  ⚠️ Dimag laga! Number likhna hai, kuch aur nahi. 🤦")
 
