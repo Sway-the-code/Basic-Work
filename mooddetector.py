@@ -13,7 +13,7 @@ def datain():
     # ti=time.strftime("%p")
     # rntime=hr,":",min,ti
 
-    time=dt.datetime.now()    
+    time=dt.date.now()    
 
     good=["happy", "great", "awesome", "joy", "fun", "amazing", "excited", "smile", "good"]
     bad=["sad", "upset", "depressed", "bad", "cry", "lonely", "tired", "hopeless"]
@@ -42,6 +42,7 @@ def datain():
     with open('direcotry.csv', 'a')as f:
         writ=csv.writer(f)
         writ.writerow([time, mood,inp])
+        print([time, mood,inp])
 
 
 def dataout():
@@ -96,6 +97,7 @@ def dataspec():
 
 def menu():
     while True:
+        print("\nMENU :- ")
         print('1. Mood detector')
         print('2. Get all entries uptil now')
         print('3. Get entries specificaly')
@@ -118,7 +120,12 @@ def menu():
         
         else:
             print('enter valid option only')
-
+        
+        ad=input('want to do something more?(Y/N)')
+        if ad.lower()=="y":
+            continue
+        else:
+            break
 
 menu()
 print('Man you are the real G aapne use kari meri banai hui cheej')
